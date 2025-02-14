@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg"
 export default function Header() {
   return (
@@ -9,7 +9,8 @@ export default function Header() {
       <ul className="menu">
         <li>Event</li>
         <li>My Tickets</li>
-        <li>About Project</li>
+        <Link to="/about">
+        <li>About Project</li></Link>
       </ul>
       <button className="ticketBtn">MY TICKET →</button>
     </div>

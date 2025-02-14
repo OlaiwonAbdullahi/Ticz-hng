@@ -1,16 +1,18 @@
 import Header from "./components/Header";
 import Container from "./components/Container";
-
-const page = [
-  <Container key="container" />,
-  
-];
+import About from "./components/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
-      <Header />
-      {page.map((component) => component)}
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Container />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
