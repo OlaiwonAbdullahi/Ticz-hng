@@ -240,9 +240,7 @@ padding: 0.7rem;
 }.ticket-select-container {
   width: 100%;
   max-width: 400px;
-  /*background: #0d1b1e;
-  padding: 20px;
-  border-radius: 12px;*/
+
   text-align: left;
 }
 
@@ -366,7 +364,7 @@ padding: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start; 
-  margin-bottom: 0.5rem;  
+  /*margin-bottom: 0.5rem; */ 
 }
 
 label, h6 {
@@ -479,14 +477,15 @@ h6 {
 .qrCode {
   width: 95px;
   height: 95px;
-  background-color: white;
+  background-color: #0E464F;
+  border: 1.2px solid #197666;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .qrCode img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -534,6 +533,12 @@ h6 {
 
 .smallLabel{
   font-size: 0.5rem;
+}
+h5{
+  font-size: 0.5rem;
+  color: red;
+  align-self: flex-end;
+  font-weight: thin;
 }
 .ticket, .ticketBackground, .ticketContent ,.eventDetails,.verticalText,.ticketFooter,.bg{
   background-color: transparent !important;

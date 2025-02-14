@@ -3,7 +3,11 @@ import { saveAs } from "file-saver";
 import Ticket from "./TicketIcon";
 import ReadyHeader from "./ReadyHeader";
 
-export default function Ready({ name, email, about, selectedTickets, selectedOption }) {
+export default function Ready({ name, email, about, selectedTickets, selectedOption,profileImage }) {
+  
+  const handleAnother =()=>{
+    
+  }
   const handleDownload = () => {
     const ticketElement = document.getElementById("ticket-section"); //
 
@@ -40,7 +44,7 @@ export default function Ready({ name, email, about, selectedTickets, selectedOpt
           </div>
 
           <div className="qrCode" style={{ padding: "1px" }}>
-            {/* Add QR code component or image here */}
+            <img src={profileImage} className="ticketImg"></img>
           </div>
 
           <div className="bg readyTicketContainer">
@@ -74,7 +78,7 @@ export default function Ready({ name, email, about, selectedTickets, selectedOpt
 
       {/* Ticket Actions */}
       <div className="ticket-actions">
-        <button className="cancel-btn">Book Another Ticket</button>
+        <button className="cancel-btn"onClick={handleAnother}>Book Another Ticket</button>
         <button className="next-btn" onClick={handleDownload}>Download</button>
       </div>
     </div>
