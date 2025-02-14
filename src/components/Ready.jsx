@@ -1,45 +1,81 @@
-//import { QRCode } from "react-qrcode-logo"; // Alternative: import QRCode from "qrcode.react";
+import { toPng } from "html-to-image";
+import { saveAs } from "file-saver";
 import Ticket from "./TicketIcon";
 import ReadyHeader from "./ReadyHeader";
 
 export default function Ready({ name, email, about, selectedTickets, selectedOption }) {
+  const handleDownload = () => {
+    const ticketElement = document.getElementById("ticket-section"); //
+
+    toPng(ticketElement, { quality: 1 }) 
+      .then((dataUrl) => {
+        saveAs(dataUrl, "Techember_Ticket.png");
+      })
+      .catch((err) => {
+        console.error("Error generating image:", err);
+      });
+  };
+
   return (
-    <div>
+    <div className="ready">
       <ReadyHeader>Ready</ReadyHeader>
       <div>
         <h2>Your Ticket Is Booked</h2>
         <p>You can download or check your mail for a copy</p>
       </div>
 
-      <div className="ticket">
+      {/* Ticket Section */}
+      <div className="ticket" id="ticket-section">
         <div className="ticketBackground"></div>
+        <br></br>
+          <br></br>
+         <br></br>
+        <br></br>
+          <br></br>
         <div className="ticketContent">
-          <div className="qrCode" style={{padding: "1px" }}>
-       {/*    <QRCode value={email || "default@example.com"} size={128} />*/}
-          </div>
           <div className="eventDetails">
-            <h3 className="bg">Techember Fest '25</h3>
-            <p className="bg">📍 04 Rumens road, Ikoyi, Lagos</p>
-            <p className="bg">
-              <span className="dateDot"></span>March 15, 2025 | 7:00 PM
-            </p>
+            <h3 className="bg detail">Techember Fest '25</h3>
+            <p className="bg detail">📍 04 Rumens road, Ikoyi, Lagos</p>
+            <p className="bg detail">📅 March 15, 2025 | 7:00 PM</p>
           </div>
-          <div className="verticalText">Techember Fest '25</div>
+
+          <div className="qrCode" style={{ padding: "1px" }}>
+            {/* Add QR code component or image here */}
+          </div>
+
+          <div className="bg readyTicketContainer">
+            <div className="flexcon bg" style={{ width: "100%" }}>
+              <h6 className="bg" style={{ flex: 1, textAlign: "left" }}>
+                <span className="bg smallLabel">Name: </span><br /> {name}
+              </h6>
+              <h6 className="bg" style={{ flex: 1, textAlign: "right" }}>
+                <span className="bg smallLabel">Email: </span><br /> {email}
+              </h6>
+            </div>
+
+            <div className="flexcon bg" style={{ width: "100%" }}>
+              <h6 className="bg" style={{ flex: 1, textAlign: "left" }}>
+                <span className="bg smallLabel">Ticket No: </span><br /> {selectedTickets}
+              </h6>
+              <h6 className="bg" style={{ flex: 1, textAlign: "right" }}>
+                <span className="bg smallLabel">Ticket Type: </span><br /> {selectedOption}
+              </h6>
+            </div>
+          </div>
         </div>
-        <div className="ticketFooter">* Ticket is valid only</div>
+       
+                <br></br>
+          <br></br>
+         <br></br>
+        <br></br>
+          <br></br>
+          <br></br>
       </div>
 
-      <div>
-        <h6>Email: {email}</h6>
-        <h6>Name: {name}</h6>
-        <h6>About: {about}</h6>
-        <h6>No of tickets: {selectedTickets}</h6>
-        <h6>Selected ticket: {selectedOption}</h6>
-      </div>
-
+      {/* Ticket Actions */}
       <div className="ticket-actions">
         <button className="cancel-btn">Book Another Ticket</button>
-        <button className="next-btn">Download</button>
+        <button className="next-btn" onClick={handleDownload}>Download</button>
       </div>
     </div>
   );

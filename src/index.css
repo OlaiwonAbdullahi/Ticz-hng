@@ -419,63 +419,62 @@ h6 {
 
 
 
-.card {
-  width: 100%;
-  max-width: 400px;
-/*  background-color: #002626;*/
-  color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
 
 .mainContent {
   text-align: center;
   margin-bottom: 2rem;
 }
-
-.mainContent h1 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.mainContent p {
-  font-size: 0.875rem;
-  color: #a0a0a0;
-}
 .ticket {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 2rem;
+  /*margin-bottom: 2rem;*/
   background-color: transparent; 
 }
-
 
 .ticketBackground {
   position: absolute;
   inset: 0;
- /* width: 50%;*/
-  background-image: url("./assets/ticket.svg");
-  background-size: contain;
+  background-image: url("./assets/bg.svg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  width: 100%;
+  height: 100%;
+  
 }
 
 .ticketBackground::after {
   content: "";
   position: absolute;
   inset: 0;
- /* background-color: rgba(0, 51, 51, 0.8);*/
+ 
 }
-
 .ticketContent {
   position: relative;
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%; 
+  max-width: 400px; 
   padding: 1rem;
+  border: 1px solid #197666;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white; 
+  margin: auto; 
+  border-radius: 1rem;
 }
+
+
+.detail{
+  text-align: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
 
 .qrCode {
   width: 95px;
@@ -496,7 +495,7 @@ h6 {
 }
 
 .eventDetails h3 {
-  font-size: 1.25rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.3rem;
   white-space: nowrap;
@@ -504,7 +503,7 @@ h6 {
 }
 
 .eventDetails p {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #e0e0e0;
   display: flex;
   align-items: center;
@@ -512,35 +511,29 @@ h6 {
   margin-bottom: 0rem;
 }
 
-.locationDot,
-.dateDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
+.readyTicketContainer{
+  background-color: #0E464F;
+  border: 1px solid #0E464F;
+  width: 75%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  margin: 0 auto; 
+  font-family:"Quicksand", serif;
+  text-align: center;
+  padding: 0.2rem 1rem;
+  margin-top: 0.3rem;
+}.flexcon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  
 }
 
-.locationDot {
-  background-color: #ef4444;
-}
-
-.dateDot {
-  background-color: #9ca3af;
-}
-
-.verticalText {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 0.65rem;
-  color: #e0e0e0;
-  padding-left: 0.5rem;
- /* border-left: 1px solid #4b5563;*/
-}
-
-.ticketFooter {
-  font-size: 0.625rem;
-  color: #d1d5db;
-  /*padding: 0.5rem;*/
+.smallLabel{
+  font-size: 0.5rem;
 }
 .ticket, .ticketBackground, .ticketContent ,.eventDetails,.verticalText,.ticketFooter,.bg{
   background-color: transparent !important;
@@ -549,4 +542,9 @@ h6 {
   .menu {
     display: none;
   }
+  
+.optionBtn{
+  justify-content: left;
+  
+}
 }
