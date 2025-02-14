@@ -4,15 +4,21 @@ export default function Form ({handleNext,handlePrevious,name,setName,email,setE
     <div className="Form">
       <div>
       <h6>Enter your Name</h6>
-      <input type="text" className=" input" value={name}               onChange={(e) => setName(e.target.value)}/>
+      <input type="text" className=" input" value={name}   
+      required
+      onChange={(e) => setName(e.target.value)}/>
       </div>
        <div>
       <label><h6>Enter your E-mail</h6></label>
-      <input type="email" placeholder="✉️ typeshii@gmail.com" className=" input" value={email}               onChange={(e) => setEmail(e.target.value)}/>
+      <input type="email" placeholder="✉️ typeshii@gmail.com" className=" input" value={email}     
+      required
+      onChange={(e) => setEmail(e.target.value)}/>
       </div>
  <div>
       <h6>About the project</h6>
-      <textarea className="textarea" value={about}               onChange={(e) => setAbout(e.target.value)}></textarea>
+      <textarea className="textarea" value={about}   
+      required
+      onChange={(e) => setAbout(e.target.value)}></textarea>
       </div>
     </div>
           

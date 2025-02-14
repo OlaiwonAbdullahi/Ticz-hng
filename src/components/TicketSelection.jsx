@@ -33,18 +33,22 @@ export default function TicketSelection({ handleNext, setSelectedTickets, select
 
       <div className="optionBtn">
         <button className={`optionBtn1 ${selectedOption === "REGULAR" ? "selected" : ""}`} onClick={() => handleSelect("REGULAR")}>
-          <div className="priceTagName bg">REGULAR ACCESS</div>
-          <div><PriceTag>FREE</PriceTag></div>
+          <span className="bg">Free</span>
+          <span className="bg">REGULAR ACCESS</span>
+          <span className="bg">22/50</span>
         </button>
 
         <button className={`optionBtn2 ${selectedOption === "VIP" ? "selected" : ""}`} onClick={() => handleSelect("VIP")}>
-          VIP ACCESS
-          <div><PriceTag>$50</PriceTag></div>
+          <span className="bg">$50</span>
+          <span className="bg">VIP ACCESS</span>
+          <span className="bg">22/50</span>
+       
         </button>
 
         <button className={`optionBtn3 ${selectedOption === "VVIP" ? "selected" : ""}`} onClick={() => handleSelect("VVIP")}>
-          VVIP ACCESS
-          <div><PriceTag>$150</PriceTag></div>
+           <span className="bg">$109</span>
+          <span className="bg">VVIP ACCESS</span>
+          <span className="bg">22/50</span>
         </button>
       </div>
 

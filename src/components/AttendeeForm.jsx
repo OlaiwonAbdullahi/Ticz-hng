@@ -27,7 +27,7 @@ export default function AttendeeForm({
               onFileRemoved={runAfterImageDelete}
               uploadIcon={<img src={upload} alt="Upload" style={{ width: 40, height: 40 }} />}
               deleteIcon={<img src={times} alt="Delete" style={{ width: 25, height: 25 }} />}
-              style={{ height: 200, width: 200, background: '#052F35', color: '#197666' }}
+              style={{ height: 200, width: 200, background: '#02191D', color: '#197666' }}
             />
             <p className="upload-label">Upload your picture</p>
           </div>
@@ -41,3 +41,4 @@ export default function AttendeeForm({
     </div>
   );
 }
+ 
