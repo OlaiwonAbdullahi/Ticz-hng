@@ -6,6 +6,7 @@ import ReadyHeader from "./ReadyHeader";
 export default function Ready({ name, email, about, selectedTickets, selectedOption,profileImage }) {
   
   const handleAnother =()=>{
+  window.location.reload();
     
   }
   const handleDownload = () => {
